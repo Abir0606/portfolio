@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. Golam Rabbani Abir's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkest: '#051f20',
+                        darker: '#0b2b26',
+                        dark: '#163832',
+                        primary: '#235347',
+                        accent: '#8eb69b',
+                        light: '#daf1de',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #051f20;
+            color: #daf1de;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #051f20 0%, #0b2b26 50%, #163832 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 5rem 1rem;
+        }
+    </style>
+</head>
+
+<body class="gradient-bg smooth-scroll">
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full bg-darker bg-opacity-90 backdrop-filter backdrop-blur-lg z-10">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold text-accent">Portfolio</h1>
+            <div class="space-x-6">
+                <a href="#about" class="text-light hover:text-accent transition duration-300">About</a>
+                <a href="#research" class="text-light hover:text-accent transition duration-300">Research</a>
+                <a href="#projects" class="text-light hover:text-accent transition duration-300">Projects</a>
+                <a href="#contact" class="text-light hover:text-accent transition duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-accent">MD. Golam Rabbani Abir</h1>
+            <p class="text-xl md:text-2xl mb-8 text-light">Researcher | Data Scientist | Developer</p>
+            <a href="#contact" class="bg-primary text-light px-8 py-3 rounded-full font-semibold hover:bg-opacity-80 transition duration-300 inline-block">Get in Touch</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto">
+        <!-- About Section -->
+        <section id="about" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
+            <h2 class="text-4xl font-semibold mb-8 text-center text-accent">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="31.jpg" alt="MD. Golam Rabbani Abir" class="w-64 h-64 rounded-full border-4 border-accent shadow-lg mx-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-light text-lg leading-relaxed mb-6">
+                        I am a passionate researcher and developer with a focus on computer vision and machine learning. 
+                        My work spans from advancing low-light object detection to developing innovative brain tumor 
+                        classification techniques. I'm constantly pushing the boundaries of what's possible in AI and 
+                        data science.
+                    </p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://www.linkedin.com/in/golam-rabbani-abir-126587211/" target="_blank" class="text-accent hover:text-light transition duration-300">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/Abir0606" target="_blank" class="text-accent hover:text-light transition duration-300">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                        <a href="mailto:grabir07@gmail.com" class="text-accent hover:text-light transition duration-300">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
+            <h2 class="text-4xl font-semibold mb-8 text-center text-accent">Research</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-accent">Advancing Low-Light Object Detection with YOLO Models</h3>
+                    <p class="text-light mb-2">Second author</p>
+                    <details class="cursor-pointer group">
+                        <summary class="text-accent group-hover:underline mb-2">View Abstract</summary>
+                        <p class="text-light italic mt-2">This research explores the efficacy of YOLO models in detecting low-light objects, contributing to advancements in computer vision.</p>
+                    </details>
+                    <a href="https://doi.org/10.1049/ccs2.12114" class="text-accent hover:underline block mt-4">Read More</a>
+                </div>
+                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-accent">Detection of Brain Tumor using CNN Architecture</h3>
+                    <p class="text-light mb-2">First author</p>
+                    <details class="cursor-pointer group">
+                        <summary class="text-accent group-hover:underline mb-2">View Abstract</summary>
+                        <p class="text-light italic mt-2">This paper presents a convolutional neural network architecture to effectively detect brain tumors from MRI images.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
+            <h2 class="text-4xl font-semibold mb-8 text-center text-accent">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-accent">Brain Tumor Classification using CNN</h3>
+                    <p class="text-light mb-4">Developed a CNN model using TensorFlow and Keras.</p>
+                    <a href="https://github.com/Abir0606/Brain-Tumor-Classification-using-CNN" class="text-accent hover:underline">GitHub Repository</a>
+                </div>
+                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-accent">House Rent Prediction</h3>
+                    <p class="text-light mb-4">Implemented linear regression with 86% accuracy.</p>
+                    <a href="https://github.com/Abir0606/House-Rent-Prediction" class="text-accent hover:underline">GitHub Repository</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
+            <h2 class="text-4xl font-semibold mb-8 text-center text-accent">Get in Touch</h2>
+            <div class="bg-darker p-8 rounded-lg shadow-lg max-w-md mx-auto">
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-light mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 bg-dark border border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-light">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-light mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-dark border border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-light">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-light mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 bg-dark border border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-light"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-primary text-light px-4 py-2 rounded-md font-semibold hover:bg-opacity-80 transition duration-300">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-darker py-8 text-center text-light">
+        <p>© 2024 MD. Golam Rabbani Abir | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in effect for sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
