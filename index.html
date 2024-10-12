@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        darkest: '#051f20',
-                        darker: '#0b2b26',
-                        dark: '#163832',
-                        primary: '#235347',
-                        accent: '#8eb69b',
-                        light: '#daf1de',
+                        primary: '#000000',
+                        secondary: '#ffffff',
                     }
                 }
             }
@@ -27,12 +23,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #051f20;
-            color: #daf1de;
+            background-color: #ffffff;
+            color: #000000;
         }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #051f20 0%, #0b2b26 50%, #163832 100%);
+        .bg-egg {
+            background-color: #f0ead6;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .card-hover {
@@ -41,320 +41,234 @@
 
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* .smooth-scroll {
-            scroll-behavior: smooth;
-        } */
+        .snap-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
 
-        section {
-            min-height: 100vh;
-            padding: 5rem 1rem;
+        .snap-section {
+            scroll-snap-align: start;
+            height: 100vh;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .snap-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .snap-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 
-<body class="gradient-bg smooth-scroll">
+<body class="antialiased">
     <!-- Navigation Bar -->
-    <nav class="fixed w-full bg-darker bg-opacity-90 backdrop-filter backdrop-blur-lg z-10">
+    <nav class="fixed w-full z-10 glassmorphism">
         <div class="container mx-auto flex justify-between items-center p-4">
-            <h1 class="text-2xl font-bold text-accent">Portfolio</h1>
+            <h1 class="text-2xl font-bold text-primary">Portfolio</h1>
             <div class="space-x-6">
-                <a href="#about" class="text-light hover:text-accent transition duration-300">About</a>
-                <a href="#work" class="text-light hover:text-accent transition duration-300">Work Experience</a>
-                <a href="#research" class="text-light hover:text-accent transition duration-300">Research</a>
-                <a href="#projects" class="text-light hover:text-accent transition duration-300">Projects</a>
-                <a href="#contact" class="text-light hover:text-accent transition duration-300">Contact</a>
+                <a href="#about" class="text-primary hover:text-gray-600 transition duration-300">About</a>
+                <a href="#work" class="text-primary hover:text-gray-600 transition duration-300">Work</a>
+                <a href="#research" class="text-primary hover:text-gray-600 transition duration-300">Research</a>
+                <a href="#projects" class="text-primary hover:text-gray-600 transition duration-300">Projects</a>
+                <a href="#contact" class="text-primary hover:text-gray-600 transition duration-300">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="h-screen flex items-center justify-center text-center px-4">
-        <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-accent">MD. Golam Rabbani Abir</h1>
-            <p class="text-xl md:text-2xl mb-8 text-light">Researcher | Data Scientist | Developer</p>
-            <a href="#contact" class="bg-primary text-light px-8 py-3 rounded-full font-semibold hover:bg-opacity-80 transition duration-300 inline-block">Get in Touch</a>
-        </div>
-    </header>
-
-    <main class="container mx-auto">
+    <main class="snap-container">
+        <!-- Hero Section -->
+        <header class="snap-section flex items-center justify-center text-center px-4">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 text-primary">MD. Golam Rabbani Abir</h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-600">Researcher | Data Scientist | Developer</p>
+                <a href="#contact" class="bg-primary text-secondary px-8 py-3 rounded-full font-semibold hover:bg-opacity-80 transition duration-300 inline-block">Get in Touch</a>
+            </div>
+        </header>
+    
         <!-- About Section -->
-        <section id="about" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
-            
-            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between">
+        <section id="about" class="snap-section flex items-center justify-center flex-col">
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between max-w-6xl mx-auto px-4">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="31.jpg" alt="MD. Golam Rabbani Abir" class="w-64 h-64 rounded-full border-4 border-accent shadow-lg mx-auto">
+                    <img src="31.jpg" alt="MD. Golam Rabbani Abir" class="w-64 h-64 rounded-full border-4 border-primary shadow-lg mx-auto float">
                 </div>
                 <div class="md:w-1/2">
-                    <h2 class="text-4xl font-semibold mb-8 text-accent">About Me</h2>
-                    <p class="text-light text-lg leading-relaxed mb-6">
+                    <h2 class="text-4xl font-semibold mb-8 text-primary">About Me</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
                         I am a passionate researcher and developer with a focus on computer vision and machine learning. 
                         My work spans from advancing low-light object detection to developing innovative brain tumor 
                         classification techniques. I'm constantly pushing the boundaries of what's possible in AI and 
                         data science.
                     </p>
                     <div class="flex space-x-6">
-                        <a href="https://www.linkedin.com/in/golam-rabbani-abir-126587211/" target="_blank" class="text-accent hover:text-light transition duration-300">
-                            <i class="fab fa-linkedin fa-2x"></i>
+                        <a href="https://www.linkedin.com/in/golam-rabbani-abir-126587211/" target="_blank" class="text-primary hover:text-gray-600 transition duration-300">
+                            <i class="fab fa-linkedin fa-2x float"></i>
                         </a>
-                        <a href="https://github.com/Abir0606" target="_blank" class="text-accent hover:text-light transition duration-300">
-                            <i class="fab fa-github fa-2x"></i>
+                        <a href="https://github.com/Abir0606" target="_blank" class="text-primary hover:text-gray-600 transition duration-300">
+                            <i class="fab fa-github fa-2x float"></i>
                         </a>
-                        <a href="mailto:grabir07@gmail.com" class="text-accent hover:text-light transition duration-300">
-                            <i class="fas fa-envelope fa-2x"></i>
+                        <a href="mailto:grabir07@gmail.com" class="text-primary hover:text-gray-600 transition duration-300">
+                            <i class="fas fa-envelope fa-2x float"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-         <!-- Work Experience Section -->
-        <section id="work" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
-            <h2 class="text-4xl font-semibold mb-8 text-center text-accent">Work Experience</h2>
-            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-                 <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-accent">Research Assistant</h3>
-                            <p class="text-light mb-2">AMIR Lab | 06/2024 - Present</p>
-                            <ul class="text-light list-disc pl-6">
-                                <li>Worked under the lab to publish 4 papers.</li>
-                                <li>Developed management skills in managing teams of researchers.</li>
-                            </ul>
+        <!-- Work Experience Section -->
+        <section id="work" class="snap-section flex items-center justify-center flex-col">
+            <h2 class="text-4xl font-semibold mb-8 text-center text-primary">Work Experience</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Research Assistant</h3>
+                    <p class="text-gray-600 mb-2">AMIR Lab | 06/2024 - Present</p>
+                    <ul class="text-gray-600 list-disc pl-6">
+                        <li>Worked under the lab to publish 4 papers.</li>
+                        <li>Developed management skills in managing teams of researchers.</li>
+                    </ul>
                 </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-accent">Research Intern</h3>
-                            <p class="text-light mb-2">AMIR Lab | 12/2023 - 06/2024</p>
-                            <ul class="text-light list-disc pl-6">
-                                <li>Worked under the lab to publish quality journals.</li>
-                                <li>Developed management skills in managing volunteers.</li>
-                                <li>Volunteered in social media management.</li>
-                            </ul>
-                </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                            <h3 class="text-xl font-semibold mb-2 text-accent">Logistic Trainee</h3>
-                            <p class="text-light mb-2">Cubenation | 09/2022</p>
-                            <ul class="text-light list-disc pl-6">
-                                <li>Developed outbound logistics at 3rd party (3PL) international event.</li>
-                            </ul>
+                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Research Intern</h3>
+                    <p class="text-gray-600 mb-2">AMIR Lab | 12/2023 - 06/2024</p>
+                    <ul class="text-gray-600 list-disc pl-6">
+                        <li>Worked under the lab to publish quality journals.</li>
+                        <li>Developed management skills in managing volunteers.</li>
+                        <li>Volunteered in social media management.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Research Section -->
-        <section id="research" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
-            <h2 class="text-4xl font-semibold mb-8 text-center text-accent">Research</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">Advancing Low-Light Object Detection with YOLO Models</h3>
-                    <p class="text-light mb-2">Second author</p>
+        <section id="research" class="snap-section flex items-center justify-center flex-col">
+            <h2 class="text-4xl font-semibold mb-8 text-center text-primary">Research</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Advancing Low-Light Object Detection with YOLO Models</h3>
+                    <p class="text-gray-600 mb-2">Second author</p>
                     <details class="cursor-pointer group">
-                        <summary class="text-accent group-hover:underline mb-2">View Abstract</summary>
-                        <p class="text-light italic mt-2">Low-light object detection is needed for ensuring security, enabling surveillance, and
+                        <summary class="text-primary group-hover:underline mb-2">View Abstract</summary>
+                        <p class="text-gray-600 italic mt-2">Low-light object detection is needed for ensuring security, enabling surveillance, and
                             enhancing safety in diverse applications, including autonomous vehicles, surveil-
-                            lance systems, and search and rescue operations. This paper presents a compre-
-                            hensive study on low-light object detection using state-of-the-art You Only Look
-                            Once (YOLO) models, including YOLOv3, YOLOv5, YOLOv6, and YOLOv8, aim-
-                            ing to enhance detection performance under challenging low-light conditions. The
-                            ExDark dataset is a dataset that consists of adequate low-light images, modified
-                            to simulate realistic low-light scenarios, and employed for evaluation. The deep
-                            learning algorithm optimizes You Only Look Once’s architecture for low-light detec-
-                            tion by adapting the network structure and training strategies while preserving the
-                            algorithm’s integrity. This paper’s experimental results show that YOLOv8 consis-
-                            tently outperforms baseline models, achieving significant improvements in accuracy
-                            and robustness in low-light scenarios. The deep learning algorithm that acquired the
-                            best score, YOLOv8s, had an mAP score of 0.5513. This work contributes to the field
-                            of low-light object detection, offering promising solutions for real-world applica-
-                            tions like nighttime surveillance and autonomous navigation in low-light conditions,
-                            addressing the growing demand for advanced low-light object detection.</p>
+                            lance systems, and search and rescue operations...</p>
                     </details>
-                    <a href="https://doi.org/10.1049/ccs2.12114" class="text-accent hover:underline block mt-4">Read More</a>
+                    <a href="https://doi.org/10.1049/ccs2.12114" class="text-primary hover:underline block mt-4">Read More</a>
                 </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">Detection of Brain Tumor using CNN Architecture</h3>
-                    <p class="text-light mb-2">First author</p>
+                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Detection of Brain Tumor using CNN Architecture</h3>
+                    <p class="text-gray-600 mb-2">First author</p>
                     <details class="cursor-pointer group">
-                        <summary class="text-accent group-hover:underline mb-2">View Abstract</summary>
-                        <p class="text-light italic mt-2">Brain cancer is characterized by the unusual growth of cells in the brain. These can-
+                        <summary class="text-primary group-hover:underline mb-2">View Abstract</summary>
+                        <p class="text-gray-600 italic mt-2">Brain cancer is characterized by the unusual growth of cells in the brain. These can-
                             cerous cells may either initiate in the brain itself (primary brain cancer) or migrate
-                            to the brain from other areas of the body (metastatic or secondary brain cancer).
-                            This atypical cell growth can manifest as a mass or tumour, potentially disrupting
-                            typical brain functions. Using modern machine learning technology brain cancer
-                            can be detected from 2D Magnetic Resonance brain Images (MRI) images. Such
-                            technologies are MobileNet-v2, Visual Geometry Group (VGG)-16 and Residual-
-                            Net(ResNet50) which will be used in this book chapter. The book chapter covers
-                            two distinct datasets: one that focuses on determining the presence or absence of
-                            tumors (binary dataset) and another that categorizes tumors into different classes
-                            (multiclass dataset). In this book chapter, we implied the Convolutional Neural
-                            Network (CNN) model in the Python and TensorFlow environment. The primary
-                            objective of this book chapter is to differentiate between regular and irregular cells
-                            of certain parts of the brain, relying on features derived from texture and statistics</p>
-                    </details>
-                </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">Banana Leaf Spot Disease Detection Using YOLO model</h3>
-                    <p class="text-light mb-2">Second author</p>
-                    <details class="cursor-pointer group">
-                        <summary class="text-accent group-hover:underline mb-2">View Abstract</summary>
-                        <p class="text-light italic mt-2">Banana leaf spot diseases such as Cordana, Pestalotiopsis, and Sigatoka pose
-                            significant challenges to the worldwide banana sector, limiting the supply
-                            of essential nutrients as well as the stability of the global economy. In this
-                            study, we utilize deep learning models to ensure the precise detection of these
-                            diseases in a proper way with better accuracy. Currently, detection methods
-                            for these diseases are often labor-intensive, time-consuming, and prone to
-                            inaccuracies. There is a significant gap in the development of efficient and
-                            precise detection techniques that can be readily deployed in the field. The
-                            importance of effective management techniques in ensuring food security and
-                            long-term livelihoods is emphasized by our research. With a subset of the Ba-
-                            nanaLSD dataset, the experimental findings with YOLOv8 show promising
-                            metrics: a precision rate of 88.9%, and a recall rate of 92%, for the YOLOv8s
-                            model. These results have the potential to significantly increase crop yields
-                            and allow for more accurate leaf spot disease detection in fields.</p>
-                    </details>
-                </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">Particle Level Noise Removal Using Machine Learning and Graph
-                        Neural Networks: A Comparative Study</h3>
-                    <p class="text-light mb-2">Second author</p>
-                    <details class="cursor-pointer group">
-                        <summary class="text-accent group-hover:underline mb-2">View Abstract</summary>
-                        <p class="text-light italic mt-2">Particle physics has always been an intriguing topic
-                            for scientists in the research field. Exotic particles pave the way
-                            for the exploration of the early universe. In order to separate
-                            exotic particles from the noise, scientists have done much research
-                            in the field of particle-level noise removal. This study addresses
-                            the problem of particle-level noise removal. Traditional machine
-                            learning models have been able to mitigate particle-level noise
-                            but they are inefficient in terms of accuracy. The introduction
-                            of Graph Neural Network and its various models addresses the
-                            efficiency of particle-level noise removal. This research compares
-                            the traditional machine learning model, specifically XGBoost
-                            and Support Vector Machine(SVM) with Graph Attention Net-
-                            work(GAT) to find the difference in efficiency between them. The
-                            data which was used to compare these models were generated
-                            using PYTHIA 8.3. The models were hyper-tuned and trained on
-                            10K proton-proton collisions. Where GAT has achieved 80.1%
-                            accuracy, while XGBoost and SVM have achieved 72.9% and
-                            67.3% accuracy. After training the model it was evaluated using
-                            Explainable AI (XAI). XAI GraphLIME was used for node-
-                            specific explanation and SHAP for feature importance. After
-                            retraining GAT with the Extracted XAI features, it showed a
-                            huge improvement across the board with 94.8% accuracy.</p>
-                    </details>
-                </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">Achieving High-Accuracy Human Activity Recognition Using BERTBased
-                        Classwise Ensemble Models</h3>
-                    <p class="text-light mb-2">Second author</p>
-                    <details class="cursor-pointer group">
-                        <summary class="text-accent group-hover:underline mb-2">View Abstract</summary>
-                        <p class="text-light italic mt-2">Human Activity Recognition (HAR) is a critical
-                            task in ubiquitous computing, offering numerous applications in
-                            healthcare, sports, and human-computer interaction. The study
-                            presents an innovative way of leveraging the BERT (Bidirectional
-                            Encoder Representations from Transformers) architecture to
-                            enhance the accuracy of HAR systems. By utilizing a classwise
-                            ensemble method, we effectively harness the capabilities of BERT
-                            for sequence classification, adapting it to the multi-dimensional
-                            time-series data characteristic of HAR tasks. Our model was
-                            trained and evaluated on the UCI Human Activity Recognition
-                            (HAR) dataset, which includes sensor data from accelerometers
-                            and gyroscopes which recorded activities like walking, walking
-                            upstairs, sitting, walking downstairs, sitting, standing and lying
-                            down from 30 participants. Our approach achieved outstanding
-                            performance through extensive experimentation, attaining 98%
-                            accuracy, 97% precision, 98% recall, and 97% F1-score. The
-                            results demonstrate the effectiveness of the BERT-based classwise
-                            ensemble method to capture complex patterns of human activi-
-                            ties, outperforming traditional HAR models. This advancement
-                            paves the way for more accurate and reliable HAR systems, with
-                            significant implications for enhancing user experience in various
-                            application domains.</p>
+                            to the brain from other areas of the body (metastatic or secondary brain cancer)...</p>
                     </details>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
-            <h2 class="text-4xl font-semibold mb-8 text-center text-accent">Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">Brain Tumor Classification using CNN</h3>
-                    <p class="text-light mb-4">Developed a CNN model using TensorFlow and Keras.</p>
-                    <a href="https://github.com/Abir0606/Brain-Tumor-Classification-using-CNN" class="text-accent hover:underline">GitHub Repository</a>
+        <section id="projects" class="snap-section flex items-center justify-center flex-col">
+            <h2 class="text-4xl font-semibold mb-8 text-center text-primary">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Brain Tumor Classification using CNN</h3>
+                    <p class="text-gray-600 mb-4">Developed a CNN model using TensorFlow and Keras.</p>
+                    <a href="https://github.com/Abir0606/Brain-Tumor-Classification-using-CNN" class="text-primary hover:underline">GitHub Repository</a>
                 </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">House Rent Prediction</h3>
-                    <p class="text-light mb-4">Implemented linear regression with 86% accuracy.</p>
-                    <a href="https://github.com/Abir0606/House-Rent-Prediction" class="text-accent hover:underline">GitHub Repository</a>
+                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">House Rent Prediction</h3>
+                    <p class="text-gray-600 mb-4">Implemented linear regression with 86% accuracy.</p>
+                    <a href="https://github.com/Abir0606/House-Rent-Prediction" class="text-primary hover:underline">GitHub Repository</a>
                 </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">Cats-vs.-Dogs-Image-Classification-with-Convolutional-Neural-Network</h3>
-                    <p class="text-light mb-4">CNN from scratch using Keras</p>
-                    <a href="https://github.com/Abir0606/Cats-vs.-Dogs-Image-Classification-with-Convolutional-Neural-Network" class="text-accent hover:underline">GitHub Repository</a>
-                </div>
-                <div class="bg-darker p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-accent">SeatFinder - Micro Event Ticket Booking</h3>
-                    <p class="text-light mb-4">A website for microevent ticket booking made with React and Django</p>
-                    <a href="https://github.com/Abir0606/SeatFinder" class="text-accent hover:underline">GitHub Repository</a>
+                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Cats vs. Dogs Image Classification</h3>
+                    <p class="text-gray-600 mb-4">CNN from scratch using Keras</p>
+                    <a href="https://github.com/Abir0606/Cats-vs.-Dogs-Image-Classification-with-Convolutional-Neural-Network" class="text-primary hover:underline">GitHub Repository</a>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="h-screen flex items-center justify-center flex-col opacity-0 transition-opacity duration-1000">
-            <h2 class="text-4xl font-semibold mb-8 text-center text-accent">Get in Touch</h2>
-            <div class="bg-darker p-8 rounded-lg shadow-lg max-w-md mx-auto">
+        <section id="contact" class="snap-section flex items-center justify-center flex-col">
+            <h2 class="text-4xl font-semibold mb-8 text-center text-primary">Get in Touch</h2>
+            <div class="glassmorphism p-8 rounded-lg shadow-lg max-w-md mx-auto">
                 <form class="space-y-4">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-light mb-1">Name</label>
-                        <input type="text" id="name" name="name" class="w-full px-3 py-2 bg-dark border border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-light">
+                        <label for="name" class="block text-sm font-medium text-primary mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-primary">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-light mb-1">Email</label>
-                        <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-dark border border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-light">
+                        <label for="email" class="block text-sm font-medium text-primary mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-primary">
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-light mb-1">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 bg-dark border border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-light"></textarea>
+                        <label for="message" class="block text-sm font-medium text-primary mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-primary"></textarea>
                     </div>
                     <div>
-                        <button type="submit" class="w-full bg-primary text-light px-4 py-2 rounded-md font-semibold hover:bg-opacity-80 transition duration-300">Send Message</button>
+                        <button type="submit" class="w-full bg-primary text-secondary px-4 py-2 rounded-md font-semibold hover:bg-opacity-80 transition duration-300">Send Message</button>
                     </div>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer class="bg-darker py-8 text-center text-light">
+    <footer class="bg-egg py-8 text-center text-primary">
         <p>© 2024 MD. Golam Rabbani Abir | All Rights Reserved</p>
     </footer>
 
     <script>
         // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
+    });
+});
 
-        // Fade-in effect for sections
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100');
-                }
-            });
-        }, { threshold: 0.1 });
+// Intersection Observer for fade-in effect
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100');
+            entry.target.classList.remove('opacity-0');
+        }
+    });
+}, { threshold: 0.1 });
 
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+    section.classList.add('opacity-0', 'transition-opacity', 'duration-1000');
+    observer.observe(section);
+});
+
+// Optional: Add a scroll-based animation for the hero section
+const heroSection = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const opacity = 1 - (scrollPosition / window.innerHeight);
+    heroSection.style.opacity = Math.max(opacity, 0);
+});
     </script>
 </body>
-
 </html>
