@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Golam Rabbani Abir - Researcher & Educator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .publication-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #3b82f6;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-toggle {
+            transition: all 0.3s ease;
+        }
+
+        .dark .bg-white {
+            background-color: #1f2937;
+        }
+
+        .dark .text-gray-900 {
+            color: #f9fafb;
+        }
+
+        .dark .text-gray-600 {
+            color: #d1d5db;
+        }
+
+        .dark .text-gray-700 {
+            color: #e5e7eb;
+        }
+
+        .dark .bg-gray-50 {
+            background-color: #111827;
+        }
+
+        .dark .bg-gray-100 {
+            background-color: #374151;
+        }
+
+        .dark .border-gray-200 {
+            border-color: #4b5563;
+        }
+
+        .dark .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-blue-600">Md. Golam Rabbani Abir</h1>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="nav-link active text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about"
+                            class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#publications"
+                            class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Publications</a>
+                        <a href="#services"
+                            class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="#contact"
+                            class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="theme-toggle p-2 rounded-lg bg-gray-100 hover:bg-gray-200">
+                        <i class="fas fa-moon text-gray-600"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden p-2">
+                        <i class="fas fa-bars text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-900 hover:text-blue-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-900 hover:text-blue-600">About</a>
+                <a href="#publications" class="block px-3 py-2 text-gray-900 hover:text-blue-600">Publications</a>
+                <a href="#services" class="block px-3 py-2 text-gray-900 hover:text-blue-600">Services</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-900 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Md. Golam Rabbani Abir
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-4">
+                        Researcher • Educator • Data Scientist
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Bridging the gap between cutting-edge research and practical education through data-driven
+                        insights and innovative teaching methodologies.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#publications"
+                            class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                            View Publications
+                        </a>
+                        <a href="#contact"
+                            class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors text-center">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+
+                <div class="fade-in flex justify-center">
+                    <div
+                        class="w-80 h-80 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full flex items-center justify-center shadow-2xl">
+                        <i class="fas fa-user-graduate text-white text-8xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Passionate about advancing knowledge through research and empowering others through education
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Background & Experience</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Education</h4>
+                            <!-- <p class="text-gray-700">Ph.D. in Data Science, Stanford University (2019)</p> -->
+                            <!-- <p class="text-gray-700">M.S. in Statistics, MIT (2015)</p> -->
+                            <p class="text-gray-700">B.Sc in Computer Science and Engineering, Bangladesh University of
+                                Business and Technology (2025)</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Current Position</h4>
+                            <p class="text-gray-700">Research Assistant at AMIR Lab</p>
+                            <!-- <p class="text-gray-700">Adjunct Professor, Department of Data Science</p> -->
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Research Interests</h4>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Machine
+                                    Learning</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Natural Language
+                                    Processing</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Educational
+                                    Technology</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Statistical
+                                    Modeling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Vision & Goals</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            My mission is to democratize access to high-quality education while pushing the boundaries
+                            of what's possible with data science and machine learning.
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            I believe in the transformative power of education and strive to make complex concepts
+                            accessible to learners from all backgrounds.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Through my research, I aim to develop innovative solutions that address real-world
+                            challenges while contributing to the advancement of scientific knowledge.
+                        </p>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold text-blue-600 mb-4">Key Achievements</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                5+ peer-reviewed publications
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                100+ students taught across various platforms
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Champion of Innovative Hardware and IoT Mode, Brainstorming Week, BUBT - 2024
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Champion of Research Poster Presentation (Artificial Intelligence Mode), Brainstorming
+                                Week, BUBT - 2024
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Publications</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Peer-reviewed research contributions to the scientific community
+                </p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="mb-8 fade-in">
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <button
+                        class="filter-btn active bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                        data-filter="all">
+                        All Publications
+                    </button>
+                    <button
+                        class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+                        data-filter="machine-learning">
+                        Machine Learning
+                    </button>
+                    <button
+                        class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+                        data-filter="nlp">
+                        NLP
+                    </button>
+                    <button
+                        class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+                        data-filter="education">
+                        Education
+                    </button>
+                </div>
+
+                <div class="flex justify-center">
+                    <select id="year-sort" class="bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-700">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Publications Grid -->
+            <div id="publications-grid" class="space-y-6">
+                <!-- Publication 1 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="computer-vision"
+                    data-year="2024">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2024</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Computer Vision</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Advancing Low-Light Object Detection with YOLO Models: An Empirical Study and Performance
+                            Evaluation
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> Samier Uddin Ahammad Shovo, <strong><em>Md. Golam Rabbani
+                                    Abir</em></strong>, Md Mohsin Kabir, M. F. Mridha
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://doi.org/10.1049/ccs2.12114" target="_blank"
+                                class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                <i class="fas fa-link mr-1"></i>DOI: 10.1049/ccs2.12114
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="nlp" data-year="2024">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2024</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">NLP</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Achieving High-Accuracy Human Activity Recognition Using BERT-Based Classwise Ensemble
+                            Models
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> KM Nafiur Rahman Fuad, Mumtahina Ahmed, <strong><em>Md. Golam
+                                    Rabbani Abir</em></strong>, Md Anisur Rahman, Md Zakir Hossain Zamil, M. F. Mridha,
+                            Jungpil Shin
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="http://dx.doi.org/10.1109/COMPAS60761.2024.10796319" target="_blank"
+                                class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                <i class="fas fa-link mr-1"></i>DOI: 10.1109/COMPAS60761.2024.10796319
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="medical-ai"
+                    data-year="2025">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2025</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">Medical AI</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            NeuroNet: An Attention-Driven Lightweight Deep Learning Model for Improved Brain Cancer
+                            Diagnosis
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> Istyak Ahmed, Hadiur Rahman Nabil, <strong><em>Md. Golam Rabbani
+                                    Abir</em></strong>, Tazdik Hossain, Aritra Das, M. F. Mridha
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://doi.org/10.1109/DASA63652.2024.10836274" target="_blank"
+                                class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                <i class="fas fa-link mr-1"></i>DOI: 10.1109/DASA63652.2024.10836274
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 4 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="astrophysics"
+                    data-year="2024">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2024</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Astrophysics</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Quantitative Analysis of Dark Matter Distribution Effects on Galactic Rotation Curves
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> Uland Rozario, K M Nafiur Rahman Fuad, <strong><em>Md. Golam
+                                    Rabbani Abir</em></strong>, Tanjim Hussain Sajin, Md. Mahbubur Rahman, Adit Ishraq,
+                            M. Firoz Mridha
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5148444" target="_blank"
+                                class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                <i class="fas fa-link mr-1"></i>SSRN 5148444
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 5 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="autonomous-vehicles"
+                    data-year="2024">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2024</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Autonomous
+                                Vehicles</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            DeepUNet24: A Deep Learning Model for Lane Segmentation in Autonomous Vehicles Navigation
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> Hashibul Ahsan Shoaib, Mst. Moushumi Khatun, <strong><em>Md. Golam
+                                    Rabbani Abir</em></strong>, Adit Ishraq, Sabiha Firdaus, Kamruddin Nur, M. F. Mridha
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://dl.acm.org/doi/full/10.1145/3723178.3723232" target="_blank"
+                                class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                <i class="fas fa-link mr-1"></i>DOI: 10.1145/3723178.3723232
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 6 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="graph-neural-networks"
+                    data-year="2024">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2024</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-sm">Graph Neural
+                                Networks</span>
+                            <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-sm">ICCIT 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Particle Level Noise Removal Using Machine Learning and Graph Neural Networks: A Comparative
+                            Study
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> <strong><em>Md. Golam Rabbani Abir</em></strong>, Uland Rozario, K
+                            M Nafiur Rahman Fuad, Samier Uddin Ahammad Shovo, Mumtahina Ahmed, Md. Mamun Hossain
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://ieeexplore.ieee.org/abstract/document/11022525" target="_blank"
+                                class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                <i class="fas fa-link mr-1"></i>DOI: 10.1109/ICCIT64611.2024.11022525
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 7 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="healthcare-ai"
+                    data-year="2024">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2024</span>
+                            <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded text-sm">Healthcare AI</span>
+                            <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-sm">ICCIT 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Predicting Hospital Length of Stay Using Residual Neural Networks with Self-Attention: A
+                            Deep Learning Approach
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> Md Shahriar Mahmud Bhuiyan, Md Al Rafi, Gourab Nicholas Rodrigues,
+                            Md Nazmul Hossain Mir, <strong><em>Md. Golam Rabbani Abir</em></strong>, M. Firoz Mridha,
+                            Jungpil Shin
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://ieeexplore.ieee.org/abstract/document/11022412" target="_blank"
+                                class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                <i class="fas fa-link mr-1"></i>DOI: 10.1109/ICCIT64611.2024.11022412
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 8 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="time-series"
+                    data-year="2025">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2025</span>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm">Energy
+                                Forecasting</span>
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">In Review</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            ABMF-Net: An Attentive Bayesian Multi-Stage Deep Learning Model for Robust Forecasting of
+                            Electricity Price and Demand
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> Md Nazmul Hossain Mir, Arindam Kishor Biswas, Md Shariful Alam
+                            Bhuiyan, <strong><em>Md. Golam Rabbani Abir</em></strong>, M. Firoz Mridha
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Publication 9 -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-lg" data-category="remote-sensing"
+                    data-year="2025">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">2025</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Remote Sensing</span>
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">In Review</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            DeforestNet-X: A Novel Hybrid CNN-Transformer Model for Deforestation and Urban Mapping in
+                            Environmental and Urban Applications
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Authors:</strong> Md Rokibul Hasan, Mohammad Balayet Hossain Saki, Md Amit Hasan, Md
+                            Shahin Alam Mozumder, <strong><em>Md. Golam Rabbani Abir</em></strong>, Adit Ishraq, M.
+                            Firoz Mridha
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Empowering individuals and organizations through expert instruction and consultation
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- IELTS Instructor -->
+                <div class="service-card bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-language text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">IELTS Instructor</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                        Comprehensive IELTS preparation with personalized strategies for all four skills: Reading,
+                        Writing, Listening, and Speaking.
+                    </p>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm">Key Outcomes:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Average score improvement: 1.5 bands</li>
+                            <li>• 95% student satisfaction rate</li>
+                            <li>• Flexible online/offline sessions</li>
+                        </ul>
+                    </div>
+
+                    <button
+                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        Contact Me
+                    </button>
+                </div>
+
+                <!-- Python Teacher -->
+                <div class="service-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-python text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Python Teacher</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                        From beginner to advanced Python programming, including data science libraries and machine
+                        learning applications.
+                    </p>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm">Key Outcomes:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Hands-on project-based learning</li>
+                            <li>• Industry-relevant skills</li>
+                            <li>• Career transition support</li>
+                        </ul>
+                    </div>
+
+                    <button
+                        class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                        Contact Me
+                    </button>
+                </div>
+
+                <!-- Data Scientist -->
+                <div class="service-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Data Scientist</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                        End-to-end data science solutions including predictive modeling, machine learning, and
+                        statistical analysis.
+                    </p>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm">Key Outcomes:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Custom ML model development</li>
+                            <li>• Data-driven insights</li>
+                            <li>• Scalable solutions</li>
+                        </ul>
+                    </div>
+
+                    <button
+                        class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium">
+                        Contact Me
+                    </button>
+                </div>
+
+                <!-- Data Analyst -->
+                <div class="service-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-database text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Data Analyst</h3>
+                    </div>
+
+                    <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                        Comprehensive data analysis, visualization, and reporting to drive informed business decisions.
+                    </p>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm">Key Outcomes:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Interactive dashboards</li>
+                            <li>• Actionable insights</li>
+                            <li>• Performance optimization</li>
+                        </ul>
+                    </div>
+
+                    <button
+                        class="w-full bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors text-sm font-medium">
+                        Contact Me
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to collaborate or have questions about my work? I'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="subject"
+                                    class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <select id="subject" name="subject" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
+                                    <option value="">Select a subject</option>
+                                    <option value="research">Research Collaboration</option>
+                                    <option value="teaching">Teaching Services</option>
+                                    <option value="consulting">Data Science Consulting</option>
+                                    <option value="speaking">Speaking Engagement</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message"
+                                    class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                                    placeholder="Tell me about your project or inquiry..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                Send Message
+                            </button>
+                        </form>
+
+                        <div id="form-message" class="mt-4 p-4 rounded-lg hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="fade-in">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-envelope text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Email</p>
+                                        <p class="text-gray-600">grabir07@gmail.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Phone</p>
+                                        <p class="text-gray-600">+88 01632 10 40 41</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Location</p>
+                                        <p class="text-gray-600">Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-4">Professional Networks</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/md-golam-rabbani-abir-126587211/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/Abir0606" target="_blank" rel="noopener noreferrer"
+                                    class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-white hover:bg-gray-900 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://scholar.google.com/citations?user=eziNVGoAAAAJ&hl=en" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-12 h-12 bg-gray-300 rounded-lg flex items-center justify-center text-white hover:bg-gray-500 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                        <path
+                                            d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z" />
+                                    </svg>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white hover:bg-blue-600 transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-bold text-gray-900 mb-2">Office Hours</h4>
+                            <p class="text-gray-700 mb-2">Available for consultations:</p>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>Monday - Friday: 9:00 AM - 5:00 PM PST</li>
+                                <li>Response time: Within 24 hours</li>
+                                <li>Video calls: By appointment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Md. Golam Rabbani Abir</h3>
+                    <p class="text-gray-300 mb-4">
+                        Advancing knowledge through research and empowering others through education.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/md-golam-rabbani-abir-126587211/"
+                            class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://github.com/md-golam-rabbani-abir"
+                            class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-researchgate text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#publications"
+                                class="text-gray-300 hover:text-white transition-colors">Publications</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a>
+                        </li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Research Areas</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Machine Learning</li>
+                        <li>Natural Language Processing</li>
+                        <li>Educational Technology</li>
+                        <li>Statistical Modeling</li>
+                        <li>Data Science</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2025 Md. Golam Rabbani Abir. All rights reserved. | Built with passion for education and research.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Publications filtering and sorting
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const publicationCards = document.querySelectorAll('.publication-card');
+        const yearSort = document.getElementById('year-sort');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active filter button
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-blue-600', 'text-white');
+                    b.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                btn.classList.remove('bg-gray-200', 'text-gray-700');
+                btn.classList.add('active', 'bg-blue-600', 'text-white');
+
+                const filter = btn.getAttribute('data-filter');
+                filterPublications(filter);
+            });
+        });
+
+        yearSort.addEventListener('change', () => {
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            filterPublications(activeFilter);
+        });
+
+        function filterPublications(category) {
+            let visibleCards = Array.from(publicationCards);
+
+            // Filter by category
+            if (category !== 'all') {
+                visibleCards = visibleCards.filter(card =>
+                    card.getAttribute('data-category') === category
+                );
+            }
+
+            // Sort by year
+            const sortOrder = yearSort.value;
+            visibleCards.sort((a, b) => {
+                const yearA = parseInt(a.getAttribute('data-year'));
+                const yearB = parseInt(b.getAttribute('data-year'));
+                return sortOrder === 'newest' ? yearB - yearA : yearA - yearB;
+            });
+
+            // Hide all cards first
+            publicationCards.forEach(card => {
+                card.style.display = 'none';
+            });
+
+            // Show and reorder visible cards
+            const container = document.getElementById('publications-grid');
+            visibleCards.forEach(card => {
+                card.style.display = 'block';
+                container.appendChild(card);
+            });
+        }
+
+        // Abstract toggle functionality
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('toggle-abstract') || e.target.parentElement.classList.contains('toggle-abstract')) {
+                const button = e.target.classList.contains('toggle-abstract') ? e.target : e.target.parentElement;
+                const abstract = button.closest('.publication-card').querySelector('.abstract');
+                const icon = button.querySelector('i');
+
+                if (abstract.classList.contains('hidden')) {
+                    abstract.classList.remove('hidden');
+                    button.innerHTML = '<i class="fas fa-chevron-up mr-1"></i>Hide Abstract';
+                } else {
+                    abstract.classList.add('hidden');
+                    button.innerHTML = '<i class="fas fa-chevron-down mr-1"></i>Show Abstract';
+                }
+            }
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Simulate form submission
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+
+            // Show success message
+            formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
+            formMessage.textContent = `Thank you, ${name}! Your message has been sent successfully. I'll get back to you within 24 hours.`;
+            formMessage.classList.remove('hidden');
+
+            // Reset form
+            contactForm.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Dark/Light mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+
+            if (body.classList.contains('dark')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Service card contact buttons
+        document.querySelectorAll('.service-card button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('#contact').scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Pre-fill the subject based on the service
+                const serviceTitle = btn.closest('.service-card').querySelector('h3').textContent;
+                const subjectSelect = document.getElementById('subject');
+
+                if (serviceTitle.includes('IELTS')) {
+                    subjectSelect.value = 'teaching';
+                } else if (serviceTitle.includes('Python')) {
+                    subjectSelect.value = 'teaching';
+                } else if (serviceTitle.includes('Data')) {
+                    subjectSelect.value = 'consulting';
+                }
+            });
+        });
+
+        // Initialize page
+        updateActiveNav();
+        filterPublications('all');
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'98606a1a937edd0d',t:'MTc1OTAzMjg3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>

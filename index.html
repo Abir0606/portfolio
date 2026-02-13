@@ -2,273 +2,467 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. Golam Rabbani Abir's Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Golam Rabbani Abir - Researcher & Educator</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Md. Golam Rabbani Abir - Researcher & Educator" />
+    <meta property="og:description"
+        content="Bridging the gap between cutting-edge research and practical education through data-driven insights and innovative teaching methodologies." />
+    <!-- Replace with actual deployment URL and optimized image later -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abir.portfolio" />
+    <meta property="og:image" content="https://abir.portfolio/og-image.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Dark Mode Script (Prevent FOUC) -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#000000',
-                        secondary: '#ffffff',
-                    }
-                }
-            }
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-        }
-        .bg-egg {
-            background-color: #f0ead6;
-        }
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        .card-hover {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .snap-container {
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            height: 100vh;
-        }
-
-        .snap-section {
-            scroll-snap-align: start;
-            height: 100vh;
-        }
-
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        .snap-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .snap-container {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .float {
-            animation: float 3s ease-in-out infinite;
-        }
-    </style>
 </head>
 
-<body class="antialiased">
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full z-10 glassmorphism">
-        <div class="container mx-auto flex justify-between items-center p-4">
-            <h1 class="text-2xl font-bold text-primary">Portfolio</h1>
-            <div class="space-x-6">
-                <a href="#about" class="text-primary hover:text-gray-600 transition duration-300">About</a>
-                <a href="#work" class="text-primary hover:text-gray-600 transition duration-300">Work</a>
-                <a href="#research" class="text-primary hover:text-gray-600 transition duration-300">Research</a>
-                <a href="#projects" class="text-primary hover:text-gray-600 transition duration-300">Projects</a>
-                <a href="#contact" class="text-primary hover:text-gray-600 transition duration-300">Contact</a>
+<body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased noise-bg">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <h1
+                        class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                        Md. Golam Rabbani Abir
+                    </h1>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link text-sm font-medium">About</a>
+                    <a href="#publications" class="nav-link text-sm font-medium">Publications</a>
+                    <a href="#services" class="nav-link text-sm font-medium">Services</a>
+                    <a href="#contact" class="nav-link text-sm font-medium">Contact</a>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle"
+                        class="p-2 rounded-lg text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors focus:outline-none">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="p-2 text-gray-600 hover:text-blue-600 dark:text-gray-400 transition-colors focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-200 dark:border-gray-800">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home</a>
+                <a href="#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About</a>
+                <a href="#publications"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Publications</a>
+                <a href="#services"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Services</a>
+                <a href="#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="snap-container">
-        <!-- Hero Section -->
-        <header class="snap-section flex items-center justify-center text-center px-4">
-            <div class="max-w-4xl">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4 text-primary">MD. Golam Rabbani Abir</h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-600">Researcher | Data Scientist | Developer</p>
-                <a href="#contact" class="bg-primary text-secondary px-8 py-3 rounded-full font-semibold hover:bg-opacity-80 transition duration-300 inline-block">Get in Touch</a>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+            <div
+                class="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse delay-1000">
             </div>
-        </header>
-    
-        <!-- About Section -->
-        <section id="about" class="snap-section flex items-center justify-center flex-col">
-            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between max-w-6xl mx-auto px-4">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="31.jpg" alt="MD. Golam Rabbani Abir" class="w-64 h-64 rounded-full border-4 border-primary shadow-lg mx-auto float">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left animate-fade-up">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm font-semibold mb-6">
+                    Available for Research & Collaboration
+                </span>
+                <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
+                    Exploring Data, <br />
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+                        Empowering Minds
+                    </span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Bridging the gap between cutting-edge research and practical education through data-driven insights
+                    and innovative teaching methodologies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#publications"
+                        class="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1">
+                        View Publications
+                    </a>
+                    <a href="#contact"
+                        class="px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-600 hover:border-blue-600 dark:hover:border-blue-400 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-all bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+                        Contact Me
+                    </a>
                 </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-semibold mb-8 text-primary">About Me</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        I am a passionate researcher and developer with a focus on computer vision and machine learning. 
-                        My work spans from advancing low-light object detection to developing innovative brain tumor 
-                        classification techniques. I'm constantly pushing the boundaries of what's possible in AI and 
-                        data science.
+            </div>
+
+            <div class="relative flex justify-center animate-tilt-in">
+                <!-- Replaced generic icon with a placeholder for user image or a styled abstract shape -->
+                <div class="relative w-80 h-80 lg:w-96 lg:h-96">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-600 rounded-full blur-2xl opacity-60 dark:opacity-40 animate-pulse">
+                    </div>
+                    <div
+                        class="relative w-full h-full rounded-full bg-white dark:bg-gray-800 border-4 border-white dark:border-gray-700 shadow-2xl overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-user-graduate text-9xl text-gray-300 dark:text-gray-600"></i>
+                    </div>
+                    <!-- Floating badges -->
+                    <div
+                        class="absolute -top-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce delay-700">
+                        <div
+                            class="p-2 bg-green-100 dark:bg-green-900/50 rounded-lg text-green-600 dark:text-green-400">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Publications</p>
+                            <p class="font-bold text-gray-900 dark:text-white">5+ Papers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Bento Grid) -->
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center max-w-3xl mx-auto reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    Passionate about advancing knowledge through research and empowering others via quality education.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
+                <!-- Vision & Goals -->
+                <div class="md:col-span-2 glass-card p-8 rounded-2xl reveal">
+                    <h3
+                        class="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                        Vision & Mission</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                        My mission is to democratize access to high-quality education while pushing the boundaries of
+                        what's possible with data science and machine learning.
                     </p>
-                    <div class="flex space-x-6">
-                        <a href="https://www.linkedin.com/in/golam-rabbani-abir-126587211/" target="_blank" class="text-primary hover:text-gray-600 transition duration-300">
-                            <i class="fab fa-linkedin fa-2x float"></i>
-                        </a>
-                        <a href="https://github.com/Abir0606" target="_blank" class="text-primary hover:text-gray-600 transition duration-300">
-                            <i class="fab fa-github fa-2x float"></i>
-                        </a>
-                        <a href="mailto:grabir07@gmail.com" class="text-primary hover:text-gray-600 transition duration-300">
-                            <i class="fas fa-envelope fa-2x float"></i>
-                        </a>
-                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        I believe in the transformative power of education and strive to make complex concepts
+                        accessible to learners from all backgrounds.
+                    </p>
                 </div>
-            </div>
-        </section>
 
-        <!-- Work Experience Section -->
-        <section id="work" class="snap-section flex items-center justify-center flex-col">
-            <h2 class="text-4xl font-semibold mb-8 text-center text-primary">Work Experience</h2>
-            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
-                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-primary">Research Assistant</h3>
-                    <p class="text-gray-600 mb-2">AMIR Lab | 06/2024 - Present</p>
-                    <ul class="text-gray-600 list-disc pl-6">
-                        <li>Worked under the lab to publish 4 papers.</li>
-                        <li>Developed management skills in managing teams of researchers.</li>
+                <!-- Achievements (Stats) -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-center reveal delay-100">
+                    <h3 class="text-xl font-bold mb-6">Key Achievements</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">5+ Peer-reviewed Publications</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">100+ Students Mentored</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">Research Award Winner</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-primary">Research Intern</h3>
-                    <p class="text-gray-600 mb-2">AMIR Lab | 12/2023 - 06/2024</p>
-                    <ul class="text-gray-600 list-disc pl-6">
-                        <li>Worked under the lab to publish quality journals.</li>
-                        <li>Developed management skills in managing volunteers.</li>
-                        <li>Volunteered in social media management.</li>
-                    </ul>
+
+                <!-- Education -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-200">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">Education</h3>
+                    <div class="border-l-2 border-blue-200 dark:border-blue-800 pl-4">
+                        <h4 class="font-semibold text-gray-900 dark:text-white">B.Sc in CS & Engineering</h4>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Bangladesh University of Business and
+                            Technology</p>
+                        <span
+                            class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-gray-600 dark:text-gray-400">2025</span>
+                    </div>
+                </div>
+
+                <!-- Current Position -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-300">
+                    <h3 class="text-xl font-bold mb-4 text-purple-600 dark:text-purple-400">Current Role</h3>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Research Assistant</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">AMIR Lab</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Interests -->
+                <div class="md:col-span-1 glass-card p-8 rounded-2xl reveal delay-400">
+                    <h3 class="text-xl font-bold mb-4">Research Interests</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">Machine
+                            Learning</span>
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">NLP</span>
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">EdTech</span>
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">Statistical
+                            Modeling</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Research Section -->
-        <section id="research" class="snap-section flex items-center justify-center flex-col">
-            <h2 class="text-4xl font-semibold mb-8 text-center text-primary">Research</h2>
-            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
-                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-primary">Advancing Low-Light Object Detection with YOLO Models</h3>
-                    <p class="text-gray-600 mb-2">Second author</p>
-                    <details class="cursor-pointer group">
-                        <summary class="text-primary group-hover:underline mb-2">View Abstract</summary>
-                        <p class="text-gray-600 italic mt-2">Low-light object detection is needed for ensuring security, enabling surveillance, and
-                            enhancing safety in diverse applications, including autonomous vehicles, surveil-
-                            lance systems, and search and rescue operations...</p>
-                    </details>
-                    <a href="https://doi.org/10.1049/ccs2.12114" class="text-primary hover:underline block mt-4">Read More</a>
+    <!-- Publications Section -->
+    <section id="publications" class="py-24 bg-gray-100/50 dark:bg-black/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl font-bold mb-4">Publications</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Peer-reviewed research contributions advancing the fields of AI, Healthcare, and Astrophysics.
+                </p>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-12 reveal">
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-2" id="filter-container">
+                    <button
+                        class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium transition-all bg-blue-600 text-white shadow-md hover:shadow-lg"
+                        data-filter="all">All</button>
+                    <button
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        data-filter="machine-learning">ML</button>
+                    <button
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        data-filter="nlp">NLP</button>
+                    <button
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        data-filter="healthcare-ai">Healthcare</button>
+                    <button
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        data-filter="computer-vision">Vision</button>
+                    <button
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        data-filter="astrophysics">Astrophysics</button>
                 </div>
-                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-primary">Detection of Brain Tumor using CNN Architecture</h3>
-                    <p class="text-gray-600 mb-2">First author</p>
-                    <details class="cursor-pointer group">
-                        <summary class="text-primary group-hover:underline mb-2">View Abstract</summary>
-                        <p class="text-gray-600 italic mt-2">Brain cancer is characterized by the unusual growth of cells in the brain. These can-
-                            cerous cells may either initiate in the brain itself (primary brain cancer) or migrate
-                            to the brain from other areas of the body (metastatic or secondary brain cancer)...</p>
-                    </details>
+
+                <!-- Sort -->
+                <div class="relative">
+                    <select id="year-sort"
+                        class="appearance-none bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 py-2 pl-4 pr-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer shadow-sm">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="snap-section flex items-center justify-center flex-col">
-            <h2 class="text-4xl font-semibold mb-8 text-center text-primary">Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-primary">Brain Tumor Classification using CNN</h3>
-                    <p class="text-gray-600 mb-4">Developed a CNN model using TensorFlow and Keras.</p>
-                    <a href="https://github.com/Abir0606/Brain-Tumor-Classification-using-CNN" class="text-primary hover:underline">GitHub Repository</a>
+            <!-- Grid -->
+            <div id="publications-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Professional Services</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Empowering individuals and organizations through expert instruction, consultation, and data
+                    solutions.
+                </p>
+            </div>
+
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-100/50 dark:bg-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="reveal">
+                    <h2 class="text-4xl font-bold mb-6">Let's Collaborate</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
+                        Have a project in mind or want to discuss research opportunities?
+                        I'm always open to new ideas and collaborations.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Email</h3>
+                                <a href="mailto:grabir07@gmail.com"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">grabir07@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Location</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-8">
+                            <h3 class="text-lg font-semibold mb-4">Connect on Social</h3>
+                            <div class="flex gap-4">
+                                <a href="https://www.linkedin.com/in/md-golam-rabbani-abir-126587211/" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white shadow-sm transition-all transform hover:-translate-y-1">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/Abir0606" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 shadow-sm transition-all transform hover:-translate-y-1">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://scholar.google.com/citations?user=eziNVGoAAAAJ&hl=en" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white shadow-sm transition-all transform hover:-translate-y-1">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-primary">House Rent Prediction</h3>
-                    <p class="text-gray-600 mb-4">Implemented linear regression with 86% accuracy.</p>
-                    <a href="https://github.com/Abir0606/House-Rent-Prediction" class="text-primary hover:underline">GitHub Repository</a>
-                </div>
-                <div class="glassmorphism p-6 rounded-lg shadow-lg card-hover">
-                    <h3 class="text-xl font-semibold mb-2 text-primary">Cats vs. Dogs Image Classification</h3>
-                    <p class="text-gray-600 mb-4">CNN from scratch using Keras</p>
-                    <a href="https://github.com/Abir0606/Cats-vs.-Dogs-Image-Classification-with-Convolutional-Neural-Network" class="text-primary hover:underline">GitHub Repository</a>
+
+                <!-- Contact Form -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-200">
+                    <form id="contact-form" action="https://formspree.io/f/PLACEHOLDER_FOR_USER" method="POST"
+                        class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label for="name"
+                                    class="text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder-gray-400"
+                                    placeholder="John Doe">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="email"
+                                    class="text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder-gray-400"
+                                    placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="subject"
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+                            <select id="subject" name="subject"
+                                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all text-gray-600 dark:text-gray-300">
+                                <option value="Research Collaboration">Research Collaboration</option>
+                                <option value="Teaching Services">Teaching Services</option>
+                                <option value="Consulting">Consulting</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="message"
+                                class="text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder-gray-400"
+                                placeholder="Your message here..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg hover:shadow-blue-500/25 transition-all transform active:scale-95">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <div id="form-message" class="hidden mt-4 p-4 rounded-lg text-sm font-medium text-center"></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="snap-section flex items-center justify-center flex-col">
-            <h2 class="text-4xl font-semibold mb-8 text-center text-primary">Get in Touch</h2>
-            <div class="glassmorphism p-8 rounded-lg shadow-lg max-w-md mx-auto">
-                <form class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-primary mb-1">Name</label>
-                        <input type="text" id="name" name="name" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-primary">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-primary mb-1">Email</label>
-                        <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-primary">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-primary mb-1">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-primary"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full bg-primary text-secondary px-4 py-2 rounded-md font-semibold hover:bg-opacity-80 transition duration-300">Send Message</button>
-                    </div>
-                </form>
+    <!-- Footer -->
+    <footer class="py-12 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-2">Md. Golam Rabbani Abir</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    © 2025 All rights reserved.
+                </p>
             </div>
-        </section>
-    </main>
 
-    <footer class="bg-egg py-8 text-center text-primary">
-        <p>© 2024 MD. Golam Rabbani Abir | All Rights Reserved</p>
+            <div class="flex gap-6">
+                <!-- Additional footer links if needed -->
+            </div>
+        </div>
     </footer>
 
-    <script>
-        // Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Intersection Observer for fade-in effect
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100');
-            entry.target.classList.remove('opacity-0');
-        }
-    });
-}, { threshold: 0.1 });
-
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    section.classList.add('opacity-0', 'transition-opacity', 'duration-1000');
-    observer.observe(section);
-});
-
-// Optional: Add a scroll-based animation for the hero section
-const heroSection = document.querySelector('header');
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    const opacity = 1 - (scrollPosition / window.innerHeight);
-    heroSection.style.opacity = Math.max(opacity, 0);
-});
-    </script>
+    <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>
