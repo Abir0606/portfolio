@@ -3,7 +3,7 @@ import { publications, services, projects } from './data.js';
 
 // --- State Management ---
 const state = {
-    theme: localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
+    theme: 'dark',
     filter: 'all',
     sortBy: 'newest'
 };
@@ -11,8 +11,6 @@ const state = {
 // --- DOM Elements ---
 const elements = {
     body: document.body,
-    themeToggle: document.getElementById('theme-toggle'),
-    themeIcon: document.querySelector('#theme-toggle i'),
     publicationsGrid: document.getElementById('publications-grid'),
     servicesGrid: document.getElementById('services-grid'),
     filterBtns: document.querySelectorAll('.filter-btn'),
@@ -25,7 +23,7 @@ const elements = {
 
 // --- Initialization ---
 function init() {
-    applyTheme(state.theme);
+    elements.body.classList.add('dark');
 
     // Conditional Rendering based on Page
     if (elements.publicationsGrid) {
@@ -45,22 +43,7 @@ function init() {
     setupTiltEffect();
 }
 
-// --- Theme Handling ---
-function applyTheme(theme) {
-    if (theme === 'dark') {
-        elements.body.classList.add('dark');
-        elements.themeIcon.classList.replace('fa-moon', 'fa-sun');
-    } else {
-        elements.body.classList.remove('dark');
-        elements.themeIcon.classList.replace('fa-sun', 'fa-moon');
-    }
-}
 
-function toggleTheme() {
-    state.theme = state.theme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', state.theme);
-    applyTheme(state.theme);
-}
 
 // --- Publications Rendering ---
 function renderPublications() {
@@ -295,10 +278,7 @@ function setupIntersectionObserver() {
 
 // --- Event Listeners ---
 function setupEventListeners() {
-    // Theme Toggle
-    if (elements.themeToggle) {
-        elements.themeToggle.addEventListener('click', toggleTheme);
-    }
+
 
     // Filter Buttons (Publications Page)
     if (elements.filterBtns && elements.filterBtns.length > 0) {
