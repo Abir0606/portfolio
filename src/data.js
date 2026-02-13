@@ -163,3 +163,38 @@ export const services = [
         ]
     }
 ];
+
+export const projects = [
+    {
+        title: "Cat vs Dogs Image Classification Using CNN",
+        link: "https://github.com/Abir0606/Cats-vs.-Dogs-Image-Classification-with-Convolutional-Neural-Network",
+        description: [
+            "Developed a CNN model to classify images between cats and dogs with test images"
+        ],
+        tools: ["Python", "NumPy", "Keras"]
+    },
+    {
+        title: "Brain Tumor Classification using CNN",
+        link: "https://github.com/Abir0606/Brain-Tumor-Classification-using-CNN",
+        description: [
+            "Built an ML model to classify brain tumors into 4 classes and tested the model with confidence scoring"
+        ],
+        tools: ["Python", "NumPy", "Keras", "TensorFlow"]
+    },
+    {
+        title: "House Rent Prediction",
+        link: "https://github.com/Abir0606/House-Rent-Prediction",
+        description: [
+            "Applied exploratory data analysis (EDA) to visualize rental trends and used linear regression for prediction"
+        ],
+        tools: ["Python", "NumPy", "ScikitLearn", "Keras", "TensorFlow", "Linear Regression"]
+    },
+    {
+        title: "SeatFinder – Micro Event Ticket Booking",
+        link: "https://github.com/Abir0606/SeatFinder",
+        description: [
+            "Developed a micro event ticket booking system with frontend and backend integration"
+        ],
+        tools: ["Django", "HTML", "CSS", "JavaScript"]
+    }
+];

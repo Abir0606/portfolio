@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Golam Rabbani Abir - Researcher & Educator</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Md. Golam Rabbani Abir - Researcher & Educator" />
+    <meta property="og:description"
+        content="Bridging the gap between cutting-edge research and practical education through data-driven insights and innovative teaching methodologies." />
+    <!-- Replace with actual deployment URL and optimized image later -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abir.portfolio" />
+    <meta property="og:image" content="https://abir.portfolio/og-image.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Dark Mode Script (Prevent FOUC) -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased noise-bg">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <h1
+                        class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                        Md. Golam Rabbani Abir
+                    </h1>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-sm font-medium">Home</a>
+                    <a href="index.html#about" class="nav-link text-sm font-medium">About</a>
+                    <a href="publications.html" class="nav-link text-sm font-medium">Publications</a>
+                    <a href="projects.html"
+                        class="nav-link text-sm font-medium active text-blue-600 dark:text-blue-400">Projects</a>
+                    <a href="index.html#services" class="nav-link text-sm font-medium">Services</a>
+                    <a href="index.html#contact" class="nav-link text-sm font-medium">Contact</a>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle"
+                        class="p-2 rounded-lg text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors focus:outline-none">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="p-2 text-gray-600 hover:text-blue-600 dark:text-gray-400 transition-colors focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-200 dark:border-gray-800">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home</a>
+                <a href="index.html#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About</a>
+                <a href="publications.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Publications</a>
+                <a href="projects.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium active text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 transition-colors">Projects</a>
+                <a href="index.html#services"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Services</a>
+                <a href="index.html#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative min-h-screen pt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    A showcase of my improved technical skills and problem-solving abilities through practical
+                    implementation.
+                </p>
+            </div>
+
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Projects injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold mb-2">Md. Golam Rabbani Abir</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    © 2025 All rights reserved.
+                </p>
+            </div>
+
+            <div class="flex gap-6">
+                <!-- Additional footer links if needed -->
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
