@@ -28,14 +28,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <!-- Force Dark Mode -->
-    <script>
-        document.documentElement.classList.add('dark');
-    </script>
+
 </head>
 
-<body
-    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased noise-bg">
+<body class="bg-eggshell text-midnight transition-colors duration-300 antialiased noise-bg">
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass transition-all duration-300">
@@ -43,8 +39,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <h1
-                        class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                    <h1 class="text-xl font-bold text-midnight transition-colors">
                         Md. Golam Rabbani Abir
                     </h1>
                 </div>
@@ -53,8 +48,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="nav-link text-sm font-medium">Home</a>
                     <a href="index.html#about" class="nav-link text-sm font-medium">About</a>
-                    <a href="publications.html"
-                        class="nav-link text-sm font-medium active text-blue-600 dark:text-blue-400">Publications</a>
+                    <a href="publications.html" class="nav-link text-sm font-medium active">Publications</a>
                     <a href="projects.html" class="nav-link text-sm font-medium">Projects</a>
                     <a href="index.html#services" class="nav-link text-sm font-medium">Services</a>
                     <a href="index.html#contact" class="nav-link text-sm font-medium">Contact</a>
@@ -62,11 +56,11 @@
 
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center gap-4">
-
+                <!-- Mobile Menu -->
+                <div class="flex items-center gap-4">
+                    <!-- Mobile Menu Button -->
                     <button id="mobile-menu-btn"
-                        class="p-2 text-gray-600 hover:text-blue-600 dark:text-gray-400 transition-colors focus:outline-none">
+                        class="md:hidden p-2 text-slate hover:text-goldenrod transition-colors">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -74,28 +68,28 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-200 dark:border-gray-800">
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-midnight/10">
             <div class="px-4 pt-2 pb-4 space-y-2">
                 <a href="index.html"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Home</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">Home</a>
                 <a href="index.html#about"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">About</a>
                 <a href="publications.html"
-                    class="block px-3 py-2 rounded-md text-base font-medium active text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 transition-colors">Publications</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium active bg-goldenrod/10 transition-colors">Publications</a>
                 <a href="projects.html"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Projects</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">Projects</a>
                 <a href="index.html#services"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Services</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">Services</a>
                 <a href="index.html#contact"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">Contact</a>
             </div>
         </div>
     </nav> <!-- Publications Section -->
-    <section id="publications" class="py-24 bg-gray-100/50 dark:bg-black/20 relative min-h-screen pt-32">
+    <section id="publications" class="py-24 bg-goldenrod/5 relative min-h-screen pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
                 <h2 class="text-4xl font-bold mb-4">Publications</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                <p class="text-lg text-slate max-w-2xl mx-auto">
                     Peer-reviewed research contributions advancing the fields of AI, Healthcare, and Astrophysics.
                 </p>
             </div>
@@ -105,33 +99,33 @@
                 <!-- Filters -->
                 <div class="flex flex-wrap justify-center gap-2" id="filter-container">
                     <button
-                        class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium transition-all bg-blue-600 text-white shadow-md hover:shadow-lg"
+                        class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium transition-all bg-goldenrod text-white shadow-md"
                         data-filter="all">All</button>
                     <button
-                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-paper text-slate shadow-sm"
                         data-filter="machine-learning">ML</button>
                     <button
-                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-paper text-slate shadow-sm"
                         data-filter="nlp">NLP</button>
                     <button
-                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-paper text-slate shadow-sm"
                         data-filter="healthcare-ai">Healthcare</button>
                     <button
-                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-paper text-slate shadow-sm"
                         data-filter="computer-vision">Vision</button>
                     <button
-                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-paper text-slate shadow-sm"
                         data-filter="astrophysics">Astrophysics</button>
                 </div>
 
                 <!-- Sort -->
                 <div class="relative">
                     <select id="year-sort"
-                        class="appearance-none bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 py-2 pl-4 pr-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer shadow-sm">
+                        class="appearance-none bg-paper border border-midnight/10 text-midnight py-2 pl-4 pr-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-goldenrod cursor-pointer shadow-sm">
                         <option value="newest">Newest First</option>
                         <option value="oldest">Oldest First</option>
                     </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate">
                         <i class="fas fa-chevron-down text-xs"></i>
                     </div>
                 </div>
@@ -144,12 +138,12 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="py-12 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer class="py-12 bg-paper border-t border-midnight/10">
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
                 <h3 class="text-xl font-bold mb-2">Md. Golam Rabbani Abir</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-sm text-slate">
                     © 2025 All rights reserved.
                 </p>
             </div>

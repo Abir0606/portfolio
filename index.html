@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,14 +25,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <!-- Force Dark Mode -->
-    <script>
-        document.documentElement.classList.add('dark');
-    </script>
+
 </head>
 
-<body
-    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased noise-bg">
+<body class="bg-eggshell text-midnight transition-colors duration-300 antialiased noise-bg">
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass transition-all duration-300">
@@ -43,30 +36,26 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <h1
-                        class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                    <h1 class="text-xl font-bold text-midnight transition-colors">
                         Md. Golam Rabbani Abir
                     </h1>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home"
-                        class="nav-link text-sm font-medium active text-blue-600 dark:text-blue-400">Home</a>
+                    <a href="#home" class="nav-link text-sm font-medium active">Home</a>
                     <a href="#about" class="nav-link text-sm font-medium">About</a>
                     <a href="publications.html" class="nav-link text-sm font-medium">Publications</a>
                     <a href="projects.html" class="nav-link text-sm font-medium">Projects</a>
                     <a href="#services" class="nav-link text-sm font-medium">Services</a>
                     <a href="#contact" class="nav-link text-sm font-medium">Contact</a>
-
-
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center gap-4">
-
+                <!-- Theme Toggle & Mobile Menu -->
+                <div class="flex items-center gap-4">
+                    <!-- Mobile Menu Button -->
                     <button id="mobile-menu-btn"
-                        class="p-2 text-gray-600 hover:text-blue-600 dark:text-gray-400 transition-colors focus:outline-none">
+                        class="md:hidden p-2 text-slate hover:text-goldenrod transition-colors">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -74,20 +63,20 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-200 dark:border-gray-800">
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-midnight/10">
             <div class="px-4 pt-2 pb-4 space-y-2">
                 <a href="#home"
-                    class="block px-3 py-2 rounded-md text-base font-medium active text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 transition-colors">Home</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium active bg-goldenrod/10 transition-colors">Home</a>
                 <a href="#about"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">About</a>
                 <a href="publications.html"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Publications</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">Publications</a>
                 <a href="projects.html"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Projects</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">Projects</a>
                 <a href="#services"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Services</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">Services</a>
                 <a href="#contact"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact</a>
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-goldenrod/5 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -96,36 +85,35 @@
     <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
         <!-- Background Elements -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute top-20 left-10 w-72 h-72 bg-royal/10 rounded-full blur-3xl animate-pulse"></div>
             <div
-                class="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse delay-1000">
+                class="absolute bottom-20 right-10 w-96 h-96 bg-goldenrod/10 rounded-full blur-3xl animate-pulse delay-1000">
             </div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
             <div class="text-center lg:text-left animate-fade-up">
                 <span
-                    class="inline-block py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm font-semibold mb-6">
+                    class="inline-block py-1 px-3 rounded-full bg-goldenrod/10 text-goldenrod text-sm font-semibold mb-6">
                     Available for Research & Collaboration
                 </span>
-                <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
+                <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-midnight">
                     Exploring Data, <br />
-                    <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+                    <span class="text-goldenrod">
                         Empowering Minds
                     </span>
                 </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                <p class="text-xl text-slate mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                     Bridging the gap between cutting-edge research and practical education through data-driven insights
                     and innovative teaching methodologies.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#publications"
-                        class="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1">
+                    <a href="publications.html"
+                        class="px-8 py-4 rounded-xl bg-midnight text-eggshell font-medium shadow-lg hover:bg-goldenrod transition-all transform hover:-translate-y-1">
                         View Publications
                     </a>
                     <a href="#contact"
-                        class="px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-600 hover:border-blue-600 dark:hover:border-blue-400 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-all bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+                        class="px-8 py-4 rounded-xl border border-midnight/10 hover:border-goldenrod text-midnight hover:text-goldenrod font-medium transition-all bg-paper/50 backdrop-blur-sm">
                         Contact Me
                     </a>
                 </div>
@@ -135,22 +123,21 @@
                 <!-- Replaced generic icon with a placeholder for user image or a styled abstract shape -->
                 <div class="relative w-80 h-80 lg:w-96 lg:h-96">
                     <div
-                        class="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-600 rounded-full blur-2xl opacity-60 dark:opacity-40 animate-pulse">
+                        class="absolute inset-0 bg-gradient-to-tr from-royal to-goldenrod rounded-full blur-2xl opacity-40 animate-pulse">
                     </div>
                     <div
-                        class="relative w-full h-full rounded-full bg-white dark:bg-gray-800 border-4 border-white dark:border-gray-700 shadow-2xl overflow-hidden flex items-center justify-center">
+                        class="relative w-full h-full rounded-full bg-paper border-4 border-paper shadow-2xl overflow-hidden flex items-center justify-center">
                         <img src="Image.jpeg" alt="Md. Golam Rabbani Abir" class="w-full h-full object-cover">
                     </div>
                     <!-- Floating badges -->
                     <div
-                        class="absolute -top-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce delay-700">
-                        <div
-                            class="p-2 bg-green-100 dark:bg-green-900/50 rounded-lg text-green-600 dark:text-green-400">
+                        class="absolute -top-4 -right-4 bg-paper p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce delay-700">
+                        <div class="p-2 bg-goldenrod/10 rounded-lg text-goldenrod">
                             <i class="fas fa-book-reader"></i>
                         </div>
                         <div>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Publications</p>
-                            <p class="font-bold text-gray-900 dark:text-white">5+ Papers</p>
+                            <p class="text-xs text-slate">Publications</p>
+                            <p class="font-bold text-midnight">5+ Papers</p>
                         </div>
                     </div>
                 </div>
@@ -163,7 +150,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-16 text-center max-w-3xl mx-auto reveal">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400">
+                <p class="text-lg text-slate">
                     Passionate about advancing knowledge through research and empowering others via quality education.
                 </p>
             </div>
@@ -171,14 +158,13 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
                 <!-- Vision & Goals -->
                 <div class="md:col-span-2 glass-card p-8 rounded-2xl reveal">
-                    <h3
-                        class="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                    <h3 class="text-2xl font-bold mb-4 text-goldenrod">
                         Vision & Mission</h3>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                    <p class="text-slate leading-relaxed mb-4">
                         My mission is to democratize access to high-quality education while pushing the boundaries of
                         what's possible with data science and machine learning.
                     </p>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p class="text-slate leading-relaxed">
                         I believe in the transformative power of education and strive to make complex concepts
                         accessible to learners from all backgrounds.
                     </p>
@@ -190,51 +176,50 @@
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3">
                             <div
-                                class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+                                class="w-8 h-8 rounded-full bg-goldenrod/10 flex items-center justify-center text-goldenrod">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <span class="text-gray-700 dark:text-gray-300">5+ Peer-reviewed Publications</span>
+                            <span class="text-slate">5+ Peer-reviewed Publications</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                            <div class="w-8 h-8 rounded-full bg-royal/10 flex items-center justify-center text-royal">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <span class="text-gray-700 dark:text-gray-300">100+ Students Mentored</span>
+                            <span class="text-slate">100+ Students Mentored</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <div
-                                class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                                class="w-8 h-8 rounded-full bg-goldenrod/10 flex items-center justify-center text-goldenrod">
                                 <i class="fas fa-trophy"></i>
                             </div>
-                            <span class="text-gray-700 dark:text-gray-300">Research Award Winner</span>
+                            <span class="text-slate">Research Award Winner</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Education -->
                 <div class="glass-card p-8 rounded-2xl reveal delay-200">
-                    <h3 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">Education</h3>
-                    <div class="border-l-2 border-blue-200 dark:border-blue-800 pl-4">
-                        <h4 class="font-semibold text-gray-900 dark:text-white">B.Sc in CS & Engineering</h4>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Bangladesh University of Business and
+                    <h3 class="text-xl font-bold mb-4 text-royal">Education</h3>
+                    <div class="border-l-2 border-royal/20 pl-4">
+                        <h4 class="font-semibold text-midnight">B.Sc in CS & Engineering</h4>
+                        <p class="text-sm text-slate mb-1">Bangladesh University of Business
+                            and
                             Technology</p>
                         <span
-                            class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-gray-600 dark:text-gray-400">2025</span>
+                            class="text-xs bg-paper px-2 py-1 rounded text-slate border border-midnight/10">2025</span>
                     </div>
                 </div>
 
                 <!-- Current Position -->
                 <div class="glass-card p-8 rounded-2xl reveal delay-300">
-                    <h3 class="text-xl font-bold mb-4 text-purple-600 dark:text-purple-400">Current Role</h3>
+                    <h3 class="text-xl font-bold mb-4 text-goldenrod">Current Role</h3>
                     <div class="flex items-center gap-4">
-                        <div
-                            class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
+                        <div class="p-3 bg-goldenrod/10 rounded-lg text-goldenrod">
                             <i class="fas fa-flask"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900 dark:text-white">Research Assistant</h4>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">AMIR Lab</p>
+                            <h4 class="font-semibold text-midnight">Research Assistant</h4>
+                            <p class="text-sm text-slate">AMIR Lab</p>
                         </div>
                     </div>
                 </div>
@@ -244,14 +229,14 @@
                     <h3 class="text-xl font-bold mb-4">Research Interests</h3>
                     <div class="flex flex-wrap gap-2">
                         <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">Machine
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-eggshell text-midnight border border-midnight/10">Machine
                             Learning</span>
                         <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">NLP</span>
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-eggshell text-midnight border border-midnight/10">NLP</span>
                         <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">EdTech</span>
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-eggshell text-midnight border border-midnight/10">EdTech</span>
                         <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">Statistical
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-eggshell text-midnight border border-midnight/10">Statistical
                             Modeling</span>
                     </div>
                 </div>
@@ -266,7 +251,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-4xl font-bold mb-4">Professional Services</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                <p class="text-lg text-slate max-w-2xl mx-auto">
                     Empowering individuals and organizations through expert instruction, consultation, and data
                     solutions.
                 </p>
@@ -279,13 +264,13 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gray-100/50 dark:bg-black/20">
+    <section id="contact" class="py-24 bg-paper/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <!-- Contact Info -->
                 <div class="reveal">
                     <h2 class="text-4xl font-bold mb-6">Let's Collaborate</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
+                    <p class="text-lg text-slate mb-12 leading-relaxed">
                         Have a project in mind or want to discuss research opportunities?
                         I'm always open to new ideas and collaborations.
                     </p>
@@ -293,24 +278,24 @@
                     <div class="space-y-8">
                         <div class="flex items-start gap-6">
                             <div
-                                class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                                class="w-12 h-12 rounded-xl bg-goldenrod/10 flex items-center justify-center text-goldenrod shrink-0">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold mb-1">Email</h3>
                                 <a href="mailto:grabir07@gmail.com"
-                                    class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">grabir07@gmail.com</a>
+                                    class="text-slate hover:text-goldenrod transition-colors">grabir07@gmail.com</a>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-6">
                             <div
-                                class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
+                                class="w-12 h-12 rounded-xl bg-royal/10 flex items-center justify-center text-royal shrink-0">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold mb-1">Location</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Dhaka, Bangladesh</p>
+                                <p class="text-slate">Dhaka, Bangladesh</p>
                             </div>
                         </div>
 
@@ -318,15 +303,15 @@
                             <h3 class="text-lg font-semibold mb-4">Connect on Social</h3>
                             <div class="flex gap-4">
                                 <a href="https://www.linkedin.com/in/md-golam-rabbani-abir-126587211/" target="_blank"
-                                    class="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white shadow-sm transition-all transform hover:-translate-y-1">
+                                    class="w-10 h-10 rounded-lg bg-paper flex items-center justify-center text-slate hover:bg-royal hover:text-white shadow-sm transition-all transform hover:-translate-y-1">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                                 <a href="https://github.com/Abir0606" target="_blank"
-                                    class="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 shadow-sm transition-all transform hover:-translate-y-1">
+                                    class="w-10 h-10 rounded-lg bg-paper flex items-center justify-center text-slate hover:bg-midnight hover:text-white shadow-sm transition-all transform hover:-translate-y-1">
                                     <i class="fab fa-github"></i>
                                 </a>
                                 <a href="https://scholar.google.com/citations?user=eziNVGoAAAAJ&hl=en" target="_blank"
-                                    class="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white shadow-sm transition-all transform hover:-translate-y-1">
+                                    class="w-10 h-10 rounded-lg bg-paper flex items-center justify-center text-slate hover:bg-royal hover:text-white shadow-sm transition-all transform hover:-translate-y-1">
                                     <i class="fas fa-graduation-cap"></i>
                                 </a>
                             </div>
@@ -340,26 +325,23 @@
                         class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label for="name"
-                                    class="text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                                <label for="name" class="text-sm font-medium text-slate">Name</label>
                                 <input type="text" id="name" name="name" required
-                                    class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder-gray-400"
+                                    class="w-full px-4 py-3 rounded-lg bg-paper border border-midnight/10 focus:ring-2 focus:ring-goldenrod outline-none transition-all placeholder-midnight/30"
                                     placeholder="John Doe">
                             </div>
                             <div class="space-y-2">
-                                <label for="email"
-                                    class="text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                                <label for="email" class="text-sm font-medium text-slate">Email</label>
                                 <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder-gray-400"
+                                    class="w-full px-4 py-3 rounded-lg bg-paper border border-midnight/10 focus:ring-2 focus:ring-goldenrod outline-none transition-all placeholder-midnight/30"
                                     placeholder="john@example.com">
                             </div>
                         </div>
 
                         <div class="space-y-2">
-                            <label for="subject"
-                                class="text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+                            <label for="subject" class="text-sm font-medium text-slate">Subject</label>
                             <select id="subject" name="subject"
-                                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all text-gray-600 dark:text-gray-300">
+                                class="w-full px-4 py-3 rounded-lg bg-paper border border-midnight/10 focus:ring-2 focus:ring-goldenrod outline-none transition-all text-slate">
                                 <option value="Research Collaboration">Research Collaboration</option>
                                 <option value="Teaching Services">Teaching Services</option>
                                 <option value="Consulting">Consulting</option>
@@ -368,15 +350,14 @@
                         </div>
 
                         <div class="space-y-2">
-                            <label for="message"
-                                class="text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                            <label for="message" class="text-sm font-medium text-slate">Message</label>
                             <textarea id="message" name="message" rows="4" required
-                                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder-gray-400"
+                                class="w-full px-4 py-3 rounded-lg bg-paper border border-midnight/10 focus:ring-2 focus:ring-goldenrod outline-none transition-all placeholder-midnight/30"
                                 placeholder="Your message here..."></textarea>
                         </div>
 
                         <button type="submit"
-                            class="w-full py-4 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg hover:shadow-blue-500/25 transition-all transform active:scale-95">
+                            class="w-full py-4 px-6 rounded-lg bg-midnight hover:bg-goldenrod text-eggshell font-medium shadow-lg transition-all transform active:scale-95">
                             Send Message
                         </button>
                     </form>
@@ -388,12 +369,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer class="py-12 bg-paper border-t border-midnight/10">
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
                 <h3 class="text-xl font-bold mb-2">Md. Golam Rabbani Abir</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-sm text-slate">
                     © 2025 All rights reserved.
                 </p>
             </div>

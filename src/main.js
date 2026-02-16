@@ -3,7 +3,6 @@ import { publications, services, projects } from './data.js';
 
 // --- State Management ---
 const state = {
-    theme: 'dark',
     filter: 'all',
     sortBy: 'newest'
 };
@@ -11,6 +10,7 @@ const state = {
 // --- DOM Elements ---
 const elements = {
     body: document.body,
+    nav: document.querySelector('nav'),
     publicationsGrid: document.getElementById('publications-grid'),
     servicesGrid: document.getElementById('services-grid'),
     filterBtns: document.querySelectorAll('.filter-btn'),
@@ -23,7 +23,8 @@ const elements = {
 
 // --- Initialization ---
 function init() {
-    elements.body.classList.add('dark');
+    // Check initial scroll position
+    handleNavbarScroll();
 
     // Conditional Rendering based on Page
     if (elements.publicationsGrid) {
@@ -41,6 +42,14 @@ function init() {
     setupEventListeners();
     setupIntersectionObserver();
     setupTiltEffect();
+}
+
+function handleNavbarScroll() {
+    if (window.scrollY > 20) {
+        elements.nav.classList.add('scrolled');
+    } else {
+        elements.nav.classList.remove('scrolled');
+    }
 }
 
 
@@ -67,39 +76,39 @@ function renderPublications() {
     }
 
     if (filtered.length === 0) {
-        container.innerHTML = `<p class="text-center text-gray-500 dark:text-gray-400 col-span-full py-12">No publications found for this category.</p>`;
+        container.innerHTML = `<p class="text-center text-slate col-span-full py-12">No publications found for this category.</p>`;
         return;
     }
 
     filtered.forEach((pub, index) => {
         const card = document.createElement('article');
-        card.className = 'glass-card p-6 rounded-2xl relative overflow-hidden group hover:border-l-4 hover:border-l-blue-500 reveal';
+        card.className = 'glass-card p-6 rounded-2xl relative overflow-hidden group hover:border-l-4 hover:border-l-goldenrod reveal';
         card.style.transitionDelay = `${index * 100}ms`; // Stagger effect
 
         card.innerHTML = `
       <div class="relative z-10">
         <div class="flex flex-wrap items-center gap-2 mb-3">
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-paper text-slate border border-midnight/10">
             ${pub.year}
           </span>
           <span class="px-3 py-1 rounded-full text-xs font-semibold ${pub.categoryColorClass}">
             ${pub.categoryLabel}
           </span>
-          ${pub.status !== 'Published' ? `<span class="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-800">${pub.status}</span>` : ''}
+          ${pub.status !== 'Published' ? `<span class="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-50 text-yellow-800 border border-yellow-200">${pub.status}</span>` : ''}
         </div>
         
-        <h3 class="text-lg md:text-xl font-bold mb-3 leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+        <h3 class="text-lg md:text-xl font-bold mb-3 leading-snug group-hover:text-goldenrod transition-colors">
           ${pub.title}
         </h3>
 
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+        <p class="text-sm text-gray-600 mb-4 line-clamp-2">
           ${pub.authors}
         </p>
 
         <div class="flex items-center gap-3">
           ${pub.doi ? `
             <a href="${pub.doi}" target="_blank" rel="noopener noreferrer" 
-               class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+               class="inline-flex items-center text-sm font-medium text-royal hover:text-goldenrod transition-colors">
               <i class="fas fa-external-link-alt mr-2 text-xs"></i> 
               Read Paper
             </a>
@@ -119,42 +128,40 @@ function renderServices() {
 
     services.forEach((service, index) => {
         const card = document.createElement('div');
-        // Using col-span logic for bento grid feel - make 1st and 4th wider on large screens if we had more items
-        // For 4 items, let's keep it uniform grid but styled richly
-        card.className = `group tilt-card relative overflow-hidden rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 bg-gradient-to-br ${service.gradient} reveal border border-white/50 dark:border-white/5`;
+        card.className = `group tilt-card relative overflow-hidden rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-500 bg-gradient-to-br ${service.gradient} reveal border border-midnight/5`;
         card.style.transitionDelay = `${index * 150}ms`;
 
         card.innerHTML = `
       <div class="relative z-10 h-full flex flex-col">
-        <div class="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/80 dark:bg-white/10 backdrop-blur-md shadow-sm">
-          <i class="${service.icon} text-2xl text-${service.color}-600 dark:text-${service.color}-400"></i>
+        <div class="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-paper/80 backdrop-blur-md shadow-sm">
+          <i class="${service.icon} text-2xl text-${service.color}"></i>
         </div>
         
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:translate-x-1 transition-transform">
+        <h3 class="text-2xl font-bold mb-3 text-midnight group-hover:translate-x-1 transition-transform">
           ${service.title}
         </h3>
         
-        <p class="text-gray-600 dark:text-gray-300 mb-6 flex-grow leading-relaxed">
+        <p class="text-slate mb-6 flex-grow leading-relaxed">
           ${service.description}
         </p>
 
         <ul class="space-y-2 mb-8">
           ${service.outcomes.map(outcome => `
-            <li class="flex items-start text-sm text-gray-600 dark:text-gray-400">
-              <i class="fas fa-check-circle text-${service.color}-500 mt-1 mr-2 flex-shrink-0"></i>
+            <li class="flex items-start text-sm text-slate">
+              <i class="fas fa-check-circle text-${service.color} mt-1 mr-2 flex-shrink-0"></i>
               <span>${outcome}</span>
             </li>
           `).join('')}
         </ul>
 
         <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
-          class="w-full py-3 px-4 rounded-xl font-medium text-white bg-${service.color}-600 hover:bg-${service.color}-700 shadow-md hover:shadow-lg transform active:scale-95 transition-all">
+          class="w-full py-3 px-4 rounded-xl font-medium text-eggshell bg-midnight hover:bg-goldenrod shadow-md transform active:scale-95 transition-all">
           Get Started
         </button>
       </div>
       
       <!-- Decorative background blur -->
-      <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-${service.color}-400/20 rounded-full blur-3xl pointer-events-none group-hover:w-48 group-hover:h-48 transition-all duration-700"></div>
+      <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-${service.color}/10 rounded-full blur-3xl pointer-events-none group-hover:w-48 group-hover:h-48 transition-all duration-700"></div>
     `;
 
         // Add tilt event listeners directly to element
@@ -167,17 +174,7 @@ function renderServices() {
 
 // --- Projects Rendering ---
 const techColors = {
-    'Python': 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border-blue-200 dark:border-blue-800',
-    'NumPy': 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800',
-    'Keras': 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-200 dark:border-red-800',
-    'TensorFlow': 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800',
-    'Django': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800',
-    'HTML': 'bg-orange-50 text-orange-700 dark:bg-orange-900/20 dark:text-orange-300 border-orange-200 dark:border-orange-800',
-    'CSS': 'bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 border-blue-200 dark:border-blue-800',
-    'JavaScript': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800',
-    'Linear Regression': 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300 border-pink-200 dark:border-pink-800',
-    'ScikitLearn': 'bg-yellow-50 text-yellow-700 dark:bg-yellow-900/20 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800',
-    'default': 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 border-gray-200 dark:border-gray-700'
+    'default': 'bg-eggshell text-midnight border-midnight/10'
 };
 
 function renderProjects() {
@@ -194,31 +191,31 @@ function renderProjects() {
         card.innerHTML = `
             <div class="p-8 flex flex-col h-full relative z-10">
                 <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl text-blue-600 dark:text-blue-400">
+                    <div class="p-3 bg-goldenrod/10 rounded-xl text-goldenrod">
                         <i class="fas fa-code-branch text-xl"></i>
                     </div>
                     <a href="${project.link}" target="_blank" 
-                       class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors transform hover:scale-110 hover:rotate-12">
+                       class="text-slate/50 hover:text-goldenrod transition-colors transform hover:scale-110 hover:rotate-12">
                         <i class="fab fa-github text-2xl"></i>
                     </a>
                 </div>
 
-                <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 class="text-2xl font-bold mb-3 text-midnight group-hover:text-goldenrod transition-colors">
                     ${project.title}
                 </h3>
 
                 <div class="flex-grow">
-                    <ul class="space-y-2 mb-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <ul class="space-y-2 mb-6 text-slate leading-relaxed">
                         ${project.description.map(desc => `
                             <li class="flex items-start">
-                                <span class="mr-2 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span class="mr-2 mt-1.5 w-1.5 h-1.5 bg-goldenrod rounded-full flex-shrink-0"></span>
                                 <span>${desc}</span>
                             </li>
                         `).join('')}
                     </ul>
                 </div>
 
-                <div class="flex flex-wrap gap-2 mt-auto pt-6 border-t border-gray-100 dark:border-gray-800">
+                <div class="flex flex-wrap gap-2 mt-auto pt-6 border-t border-midnight/10">
                     ${project.tools.map(tool => `
                         <span class="px-3 py-1 rounded-full text-xs font-semibold border ${techColors[tool] || techColors['default']}">
                             ${tool}
@@ -228,7 +225,7 @@ function renderProjects() {
             </div>
             
             <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-goldenrod/5 to-royal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
         `;
 
         container.appendChild(card);
@@ -280,17 +277,18 @@ function setupIntersectionObserver() {
 function setupEventListeners() {
 
 
+
     // Filter Buttons (Publications Page)
     if (elements.filterBtns && elements.filterBtns.length > 0) {
         elements.filterBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 // UI Update
                 elements.filterBtns.forEach(b => {
-                    b.classList.remove('bg-blue-600', 'text-white');
-                    b.classList.add('bg-gray-100', 'text-gray-600', 'dark:bg-gray-800', 'dark:text-gray-300');
+                    b.classList.remove('bg-goldenrod', 'text-white');
+                    b.classList.add('bg-paper', 'text-slate');
                 });
-                e.target.classList.remove('bg-gray-100', 'text-gray-600', 'dark:bg-gray-800', 'dark:text-gray-300');
-                e.target.classList.add('bg-blue-600', 'text-white');
+                e.target.classList.remove('bg-paper', 'text-slate');
+                e.target.classList.add('bg-goldenrod', 'text-white');
 
                 // State Update
                 state.filter = e.target.dataset.filter;
@@ -338,11 +336,14 @@ function setupEventListeners() {
         const href = link.getAttribute('href');
         // Check if link points specifically to the current file
         if (href === currentPage || (currentPage === 'index.html' && href === '#home')) {
-            link.classList.add('active', 'text-blue-600', 'dark:text-blue-400');
+            link.classList.add('active');
         } else if (href !== currentPage && !href.startsWith('#')) {
-            link.classList.remove('active', 'text-blue-600', 'dark:text-blue-400');
+            link.classList.remove('active');
         }
     });
+
+    // Add scroll event for Navbar
+    window.addEventListener('scroll', handleNavbarScroll);
 
     // Smooth Scroll Highlighting (Only on Index Page for local sections)
     if (currentPage === 'index.html' || currentPage === 'index.html' || currentPage === '') {
@@ -362,9 +363,9 @@ function setupEventListeners() {
                 document.querySelectorAll('.nav-link').forEach(link => {
                     const href = link.getAttribute('href');
                     if (href === `#${current}`) {
-                        link.classList.add('active', 'text-blue-600', 'dark:text-blue-400');
+                        link.classList.add('active');
                     } else if (href.startsWith('#')) {
-                        link.classList.remove('active', 'text-blue-600', 'dark:text-blue-400');
+                        link.classList.remove('active');
                     }
                 });
             }
@@ -397,7 +398,7 @@ function setupEventListeners() {
                 if (response.ok) {
                     if (elements.formMessage) {
                         elements.formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-800');
-                        elements.formMessage.classList.add('bg-green-100', 'text-green-800', 'dark:bg-green-900/30', 'dark:text-green-300');
+                        elements.formMessage.classList.add('bg-green-100', 'text-green-800');
                         elements.formMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Message sent successfully! I will get back to you soon.';
                     }
                     form.reset();
@@ -407,7 +408,7 @@ function setupEventListeners() {
             } catch (error) {
                 if (elements.formMessage) {
                     elements.formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-800');
-                    elements.formMessage.classList.add('bg-red-100', 'text-red-800', 'dark:bg-red-900/30', 'dark:text-red-300');
+                    elements.formMessage.classList.add('bg-red-100', 'text-red-800');
                     elements.formMessage.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> Oops! There was a problem sending your message. Please try again.';
                 }
             } finally {
