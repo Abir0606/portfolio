@@ -322,8 +322,7 @@
 
                 <!-- Contact Form -->
                 <div class="glass-card p-8 rounded-2xl reveal delay-200">
-                    <form id="contact-form" action="https://formspree.io/f/PLACEHOLDER_FOR_USER" method="POST"
-                        class="space-y-6">
+                    <form name="submit-to-google-sheet" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label for="name" class="text-sm font-medium text-slate">Name</label>
@@ -387,6 +386,34 @@
     </footer>
 
     <script type="module" src="./src/main.js"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwuwTnhjBcJsS1TvLIkB7AeXJK5nF62GR7Gaqd6_a5bEYpn2xKU6qbjCs7poGLhnO0-/exec' // Paste your URL here
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("form-message")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            msg.innerHTML = "Sending..."
+            msg.classList.remove("hidden")
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully!"
+                    msg.style.color = "green"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                        msg.classList.add("hidden")
+                        form.reset()
+                    }, 5000)
+                })
+                .catch(error => {
+                    msg.innerHTML = "Error! Message not sent."
+                    msg.style.color = "red"
+                    console.error('Error!', error.message)
+                })
+        })
+    </script>
 </body>
 
 </html>
